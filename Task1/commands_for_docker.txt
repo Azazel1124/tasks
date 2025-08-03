@@ -1,0 +1,5 @@
+sudo -i
+docker login
+docker build -t wonka1124/testpy:latest .
+docker tag 1task:latest wonka1124/testpy:latest
+docker push wonka1124/testpy:latest
