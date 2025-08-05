@@ -13,7 +13,7 @@ docker_packages:
 # Private registry settings
 private_registry: "docker.io/wonka1124"
 registry_user: "wonka1124"
-registry_password: "Qaszplkm1"
+registry_password: ""
 
 # Web application settings
 webapp_image: "testpy"
