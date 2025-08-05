@@ -46,12 +46,13 @@
     username: "{{ registry_user }}"
     password: "{{ registry_password }}"
 
-- name: Run 3 containers
+- name: Run 3 web application containers
   docker_container:
     name: "webapp-{{ item }}"
-    image: "webapp-{{ image }}"
+    image: "{{ private_registry }}/{{ webapp_image }}:{{ webapp_tag }}"
     state: started
     ports:
       - "800{{ item }}:80"
     pull: yes
-    loop: [1, 2, 3]
+    restart: yes
+  loop: [1, 2, 3]
