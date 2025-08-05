@@ -11,7 +11,7 @@ docker_packages:
   - containerd.io
 
 # Private registry settings
-private_registry: "docker.io/wonka1124"
+private_registry: "docker.io"
 registry_user: "wonka1124"
 registry_password: ""
 
