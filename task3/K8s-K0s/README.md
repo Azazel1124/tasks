@@ -1,23 +1,11 @@
-# Helm-чарты для DevOps-проекта
+# Helm-чарты
 
 В этой директории находятся Helm-чарты для деплоя всех основных сервисов проекта в Kubernetes-кластер:
 
 - flask-chart — Flask-приложение
 
 
----
 
-## Структура каждого чарта
-
-```
-<service>-chart/
-├── Chart.yaml           # Метаинформация Helm-чарта
-├── values.yaml          # Основные параметры (образ, порты, переменные окружения)
-└── templates/
-    ├── deployment.yaml  # Deployment для сервиса
-    ├── service.yaml     # Service для доступа к поду
-    └── configmap.yaml   # (если нужно) Конфиг для сервиса
-```
 
 ---
 
@@ -39,29 +27,6 @@
    kubectl get pods
    kubectl get svc
    ```
-
----
-
-## Пример values.yaml для Flask
-
-```yaml
-replicaCount: 1
-image:
-  repository: <ваш-dockerhub-логин>/flask-app
-  tag: latest
-  pullPolicy: IfNotPresent
-service:
-  type: ClusterIP
-  port: 5000
-env:
-  DB_HOST: "db"
-  DB_NAME: "project1_db"
-  DB_USER: "postgres"
-  DB_PASSWORD: "yourpass"
-  SECRET_KEY: "yourkey"
-```
-
----
 
 
 ---
